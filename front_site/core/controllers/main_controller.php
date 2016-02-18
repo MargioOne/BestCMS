@@ -11,7 +11,8 @@ class main_controller
 {
     function __construct()
     {
-echo 'sdfasd';
+        include (SITEPATCH."core/views/main_view.php");
+        $main_view = new main_view;
     }
 
 

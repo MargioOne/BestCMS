@@ -8,5 +8,8 @@
  */
 class main_view
 {
-
+    function __construct()
+    {
+        include (TPLPATCH.'header.tpl');
+    }
 }
