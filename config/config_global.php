@@ -1,2 +1,2 @@
 <?php
-define(" ds" , "" );
+define("INCCORE" , "core/Global_Core.php" );
