@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="<?php echo TPLPATCH.'styles/'.CSSPOST;?>">
+    <link rel="stylesheet" href="<?php echo TPLPATCH.'styles/'.$core->;?>">
     <title>Title</title>
 
 </head>

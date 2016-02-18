@@ -9,6 +9,7 @@
  */
 class main_controller
 {
+
     function __construct()
     {
         include (SITEPATCH."core/views/main_view.php");
