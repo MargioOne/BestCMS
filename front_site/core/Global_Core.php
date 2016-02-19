@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Pavel
@@ -6,38 +7,28 @@
  * Time: 13:07
  * Project: BeesCMS
  */
-class core{
+class core
+{
     public $classnew;
-    public $filecss;
 
     function __construct()
     {
         $this->rout();
-        $this->what_css();
     }
 
-    public function rout(){
+    public function rout()
+    {
         if (!empty($_GET['page'])) {
             $control = trim(strip_tags($_GET['page']));
         } else {
-            $control = 'main_controller';
+            $control = 'post';
         }
 
-        if(file_exists(SITEPATCH."core/controllers/".$control.".php")){
-            include(SITEPATCH."core/controllers/".$control.".php");
+        if (file_exists(SITEPATCH . "core/controllers/" . $control . ".php")) {
+            include(SITEPATCH . "core/controllers/" . $control . ".php");
             $this->classnew = new $control;
-        }else{
+        } else {
             exit ();
         };
     }
-    function what_css(){
-        if(!empty($_GET['page'])||$_GET['page'] = 'post')
-        {
-            $this->filecss = CSSPOST;
-        }
-        elseif($_GET['page'] = 'about'){
-            $this->filecss = CSSABOUT;
-        }
-    }
-
 }

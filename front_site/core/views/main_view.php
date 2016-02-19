@@ -8,8 +8,12 @@
  */
 class main_view
 {
-    function __construct()
+    public $title;
+
+    function __construct($tmptitle)
     {
-        include (TPLPATCH.'header.tpl');
+        $this->title = $tmptitle;
+        include(TPLPATCH . 'header.tpl');
     }
+
 }

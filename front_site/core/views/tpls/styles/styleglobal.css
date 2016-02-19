@@ -44,8 +44,8 @@ body {
     background: rgba(202, 199, 199, 0.35);
 }
 
-.content{
-    background: rgba(123,110,110,0.44);
+.content {
+    background: rgba(123, 110, 110, 0.44);
     margin: 20px auto;
     min-height: 500px;
     height: 75%;
@@ -53,45 +53,52 @@ body {
     max-height: 900px;
     border: dimgrey 1px solid;
 }
-nav{
-    background: rgba(123,110,110,0.44);
+
+nav {
+    background: rgba(123, 110, 110, 0.44);
     width: 85%;
     margin: 20px auto;
-    height:70px;
+    height: 70px;
     border: dimgrey 1px solid;
 }
-footer{
-    background: rgba(123,110,110,0.44);
+
+footer {
+    background: rgba(123, 110, 110, 0.44);
     width: 85%;
     margin: 20px auto;
-    height:7%;
+    height: 7%;
     border: dimgrey 1px solid;
 }
-nav a{
+
+nav a {
     margin-top: 20px;
     text-align: center;
     display: inline-block;
     width: 33%;
 }
-.f_box{
+
+.f_box {
     background: rgba(247, 247, 247, 0.41);
     width: 85%;
     margin: 20px auto;
-    height:70px;
+    height: 70px;
     border: dimgrey 1px solid;
 }
-.article{
+
+.article {
     background: rgba(247, 247, 247, 0.41);
     width: 85%;
     margin: 20px auto;
     height: 35%;
     border: dimgrey 1px solid;
 }
-.article p{
-    margin:20px auto;
+
+.article p {
+    margin: 20px auto;
     width: 90%;
 }
-footer p{
+
+footer p {
     text-align: center;
 }
 
