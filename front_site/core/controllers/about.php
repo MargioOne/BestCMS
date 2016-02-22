@@ -12,7 +12,7 @@ class about
 
     function __construct()
     {
-        include(VIEWPATCH . "main_view.php");
+        include(VIEWPATCH . "model_post.php");
         $main_view = new main_view($this->title);
     }
 

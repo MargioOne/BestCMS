@@ -11,22 +11,19 @@ class post
 {
     public $title;
 
-    function __construct()
+    function __construct() //конструктор
     {
-        $this->get_title();
-        include(VIEWPATCH . "main_view.php");
-        $main_view = new main_view($this->title);
-
+        $this->get_article();
     }
 
-
-    function get_title()
+    function get_article() //получение данных статьи
     {
-        if (empty($_GET['page']) || $_GET['page'] == 'post') {
-            $this->title = "POST";
-            return $this->title;
-        }
+        include (MODELPATCH."model_post.php");
+        $model = new view_post();
+        $model->get_article();
+        print_r($model->article_row);
     }
+
 
 
 }
