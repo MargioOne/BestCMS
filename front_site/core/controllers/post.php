@@ -18,12 +18,16 @@ class post
 
     function get_article() //получение данных статьи
     {
-        include (MODELPATCH."model_post.php");
+        include(MODELPATCH . "model_post.php");
         $model = new view_post();
         $model->get_article();
-        print_r($model->article_row);
+        // В $article_row хранятся данные с базы таблицы article.
     }
 
+    function get_title()
+    {
+
+    }
 
 
 }
