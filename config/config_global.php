@@ -1,4 +1,5 @@
 <?php
+define('NAMESITE','BEESCMS');
 //Пути до директорий сайта
 define("BASEURL", "http://bestcms/"); //путь к сайту
 define("INCCORE", "core/Global_Core.php"); // путь к главному ядру
@@ -11,4 +12,5 @@ define("HOSTBD", "localhost");
 define("USERBD", "root");
 define("PASSBD", "");
 define("NAMEBD", "BeeSCMC");
+
 //http://bestcms/front_site/core/views/tpls/styles/global_post_style.css

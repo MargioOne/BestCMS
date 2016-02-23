@@ -10,6 +10,13 @@ class model_post
 {
     public $count_posts;
     public $result;
+    public $num_of_article;
+
+    function __construct()
+    {
+        $this->get_count_posts();
+        $this->get_count_config();
+    }
 
     function get_article($start, $num)
     {
@@ -21,9 +28,18 @@ class model_post
     function get_count_posts()
     {
         $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        $result = $db->query('SELECT COUNT(*) FROM article');
-        $this->count_posts = mysqli_fetch_assoc($result);
-        $this->count_posts = intval($this->count_posts);
+        $result = $db->query('SELECT count(*) as total FROM article');
+        $data = mysqli_fetch_assoc($result);
+        $this->count_posts = $data['total'];
         return $this->count_posts;
+    }
+
+    function get_count_config()
+    {
+        $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
+        $result = $db->query('SELECT count_articles_on_page FROM config');
+        $data = mysqli_fetch_assoc($result);
+        $this->num_of_article = $data['count_articles_on_page'];
+        return $this->num_of_article;
     }
 }
