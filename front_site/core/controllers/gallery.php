@@ -12,11 +12,8 @@ class gallery
 
     function __construct()
     {
-        include(VIEWPATCH . "model_post.php");
-        $main_view = new main_view($this->title);
-        //if($_GET['page']) {
-            //echo 'class=current_page';
-        //}
+        echo "gallery!";
+
     }
 
 }

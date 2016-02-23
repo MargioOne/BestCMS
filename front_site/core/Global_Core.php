@@ -22,11 +22,14 @@ class core
             $control = trim(strip_tags($_GET['page']));
         } else {
             $control = 'post';
+            $_GET['page'] = 'post';
+            $_GET['articles'] = 1;
         }
 
         if (file_exists(SITEPATCH . "core/controllers/" . $control . ".php")) {
             include(SITEPATCH . "core/controllers/" . $control . ".php");
-            $this->classnew = new $control;
+            $class_control = $control."_controller";
+            $this->classnew = new $class_control;
         } else {
             exit ();
         };

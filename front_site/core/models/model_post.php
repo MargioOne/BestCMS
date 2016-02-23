@@ -6,21 +6,16 @@
  * Date: 18.02.2016
  * Time: 13:09
  */
-class view_post
+class model_post
 {
-    public $article_row;
     public $count_posts;
     public $result;
 
-    function get_article( $start, $num)
+    function get_article($start, $num)
     {
         $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        $this->result = $db->query('SELECT * FROM article LIMIT 1, 2');
-        //while(!empty($result)){$this->article_row = mysqli_fetch_assoc($result);}
-
+        $this->result = $db->query("SELECT * FROM article LIMIT $start, $num");
         return $this->result;
-
-
     }
 
     function get_count_posts()
