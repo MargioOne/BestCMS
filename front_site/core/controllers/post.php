@@ -19,7 +19,6 @@ class post_controller
         include(VIEWPATCH . "post_view.php");
         $view = new post_view();
         $this->structure_of_list($view, $model->num_of_article);
-
     }
 
     function get_article_and_pagination($model)
@@ -33,6 +32,8 @@ class post_controller
         $start = $articles * $num - $num;
         $model->get_article($start, $num);
         while ($this->postrow[] = mysqli_fetch_array($model->result)) ;
+
+        //sort($this->postrow);
         //$this->get_article_on_post($num);
     }
 
@@ -40,8 +41,10 @@ class post_controller
     {
         $title = 'POST PAGE - ' . NAMESITE;
         $cssfile = "styleglobal.css";
+        $copyrate = "copyrat";
         $view->get_header($cssfile, $title);
         $view->get_body($this->postrow, $num);
-    }
+        $view->get_footer($copyrate);
 
+    }
 }
