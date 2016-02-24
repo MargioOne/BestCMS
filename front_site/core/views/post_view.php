@@ -16,17 +16,20 @@ class post_view
 
     function get_body($postrow, $num)
     {
+        $prev = $_GET["articles"]-1;
         include_once("tpls/body_page.tpl");
     }
-}
 
-/*echo "<table>";
+    function get_footer($copyrat)
+    {
+        include_once("tpls/footer.tpl");
+    }
+}
+/*<?php
         for ($i = 0; $i < $num; $i++) {
-            echo "<tr>
-         <td>" . $this->postrow[$i]['title'] . "</td>
-         <td>" . $this->postrow[$i]['full_text'] . "</td></tr>
-         <tr><td colspan=\"2\">   " . $this->postrow[$i]['date'] . "</td></tr>";
+        echo "<div class='article'>
+        <header>".$postrow[$i]['title']."</header>
+
+        <p>".$postrow[$i]['description']."</p>    </div>";
         }
-        echo "</table>";
-        echo "<a href=\"?articles=2\">2</a>";
-        */
+?>*/
