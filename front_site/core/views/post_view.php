@@ -14,9 +14,9 @@ class post_view
         include_once("tpls/header.tpl");
     }
 
-    function get_body($postrow, $num)
+    function get_body($postrow, $prev, $next, $left1, $left2, $right1, $right2, $full, $no_full, $last )
     {
-        $prev = $_GET["articles"]-1;
+        $current = $_GET["articles"];
         include_once("tpls/body_page.tpl");
     }
 
@@ -33,3 +33,6 @@ class post_view
         <p>".$postrow[$i]['description']."</p>    </div>";
         }
 ?>*/
+
+
+//for ($i = 0; $i < $num; $i++) {

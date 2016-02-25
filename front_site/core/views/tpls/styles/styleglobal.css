@@ -38,7 +38,7 @@ body {
     min-width: 900px;
     width: 80%;
     min-height: 800px;
-    min-height: 100%;
+
     border: dimgrey 1px solid;
     margin: 0 auto;
     background: rgba(202, 199, 199, 0.35);
@@ -47,10 +47,8 @@ body {
 .content {
     background: rgba(123, 110, 110, 0.44);
     margin: 20px auto;
-    min-height: 500px;
-    min-height: 75%;
+    min-height: 800px;
     width: 85%;
-    max-height: 900px;
     border: dimgrey 1px solid;
     padding-bottom: 20px;
 }
@@ -94,19 +92,22 @@ nav a {
     padding-bottom: 30px;
 }
 
-.time{
+.time {
     float: right;
     font-size: 11pt;
     color: #82867F;
     margin-right: 15px;
     margin-top: 8px;
 }
-.time b{
+
+.time b {
     color: #67675B;
 }
-.user b{
+
+.user b {
     color: #67675B;
 }
+
 .user {
     float: left;
     font-size: 11pt;
@@ -119,33 +120,52 @@ nav a {
     margin-top: 32px;
 }
 
-.title_page header{
+.title_page header {
     text-align: center;
     margin-bottom: 13px;
     font-size: 18pt;
 }
 
-.full_text{
+.full_text {
     text-indent: 25px;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.red_more{
+.red_more {
     float: left;
     font-size: 11pt;
     color: #82867F;
     margin-left: 15px;
     margin-top: 8px;
 }
-.date{
+
+.date {
     float: right;
     font-size: 11pt;
     color: #82867F;
     margin-right: 15px;
     margin-top: 8px;
 }
+
 footer p {
     text-align: center;
 }
+
+.pagination {
+    max-width: 105px;
+    margin: 0 auto;
+}
+
+.pagination a {
+    text-decoration: none;
+    font-size: 13pt;
+    color: #000000;
+}
+
+.pagination b {
+    font-size: 15pt;
+    color: #E20606;
+}
+
 

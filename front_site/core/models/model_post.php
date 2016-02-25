@@ -11,17 +11,21 @@ class model_post
     public $count_posts;
     public $result;
     public $num_of_article;
+    public $sitename;
+    public $copyrate;
 
     function __construct()
     {
         $this->get_count_posts();
         $this->get_count_articles_config();
+        $this->get_name_site();
+        $this->get_copyrate();
     }
 
     function get_article($start, $num)
     {
         $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        $this->result = $db->query("SELECT * FROM article LIMIT $start, $num" );
+        $this->result = $db->query("SELECT * FROM article LIMIT $start, $num");
         return $this->result;
     }
 
@@ -50,5 +54,23 @@ class model_post
         $data = mysqli_fetch_assoc($result);
         $this->num_of_article = $data['count_articles_on_page'];
         return $this->num_of_article;
+    }
+
+    function get_name_site()
+    {
+        $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
+        $result = $db->query('SELECT name_of_site FROM config');
+        $data = mysqli_fetch_assoc($result);
+        $this->sitename = $data['name_of_site'];
+        return $this->sitename;
+    }
+
+    function get_copyrate()
+    {
+        $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
+        $result = $db->query('SELECT copyrate FROM config');
+        $data = mysqli_fetch_assoc($result);
+        $this->copyrate = $data['copyrate'];
+        return $this->copyrate;
     }
 }
