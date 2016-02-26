@@ -27,17 +27,27 @@ class post_controller
 
     function get_article_and_pagination($model)
     {
-        $num = $model->num_of_article;
-        $count = $model->count_posts;
-        $articles = $_GET['articles'];
-        $total_pages = intval(($count - 1) / $num) + 1;
-        $this->last_page = $total_pages;
-        if (empty($articles) || $articles < 0) $articles = 1;
-        if ($articles > $total_pages) $articles = $total_pages;
-        $start = $articles * $num - $num;
+
         if (empty($_GET['category'])) {
+            $num = $model->num_of_article;
+            $count = $model->count_posts;
+            $articles = $_GET['articles'];
+            $total_pages = intval(($count - 1) / $num) + 1;
+            $this->last_page = $total_pages;
+            if (empty($articles) || $articles < 0) $articles = 1;
+            if ($articles > $total_pages) $articles = $total_pages;
+            $start = $articles * $num - $num;
             $model->get_article($start, $num);
+
         }else{
+            $num = $model->num_of_article;
+            $count = $model->count_posts;
+            $articles = $_GET['articles'];
+            $total_pages = intval(($count - 1) / $num) + 1;
+            $this->last_page = $total_pages;
+            if (empty($articles) || $articles < 0) $articles = 1;
+            if ($articles > $total_pages) $articles = $total_pages;
+            $start = $articles * $num - $num;
             $cat = $_GET['category'];
             $model->get_article_by_cat($start, $num, $cat);
         }
