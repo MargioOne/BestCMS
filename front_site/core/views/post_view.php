@@ -25,14 +25,5 @@ class post_view
         include_once("tpls/footer.tpl");
     }
 }
-/*<?php
-        for ($i = 0; $i < $num; $i++) {
-        echo "<div class='article'>
-        <header>".$postrow[$i]['title']."</header>
-
-        <p>".$postrow[$i]['description']."</p>    </div>";
-        }
-?>*/
 
 
-//for ($i = 0; $i < $num; $i++) {

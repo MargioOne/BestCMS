@@ -35,7 +35,13 @@ class post_controller
         if (empty($articles) || $articles < 0) $articles = 1;
         if ($articles > $total_pages) $articles = $total_pages;
         $start = $articles * $num - $num;
-        $model->get_article($start, $num);
+        if (empty($_GET['category'])) {
+            $model->get_article($start, $num);
+        }else{
+            $cat = $_GET['category'];
+            $model->get_article_by_cat($start, $num, $cat);
+        }
+
         while ($this->postrow[] = mysqli_fetch_array($model->result)) ;
     }
 
@@ -45,7 +51,7 @@ class post_controller
         $cssfile = "styleglobal.css";
         $copyrate = $model->copyrate;
         $view->get_header($cssfile, $title);
-        $view->get_body($this->postrow, $this->prev, $this->next, $this->left1, $this->left2, $this->right1,$this->right2, $this->full_page, $this->no_full_page, $this->last_page);
+        $view->get_body($this->postrow, $this->prev, $this->next, $this->left1, $this->left2, $this->right1, $this->right2, $this->full_page, $this->no_full_page, $this->last_page);
         $view->get_footer($copyrate);
     }
 
@@ -57,13 +63,14 @@ class post_controller
         if (!empty($_GET['articles']) && $_GET['articles'] > 1 && $_GET['articles'] <= $total_pages) $this->left1 = $_GET['articles'] - 1;
         if (!empty($_GET['articles']) && $_GET['articles'] > 2 && $_GET['articles'] <= $total_pages) $this->left2 = $_GET['articles'] - 2;
         if (!empty($_GET['articles']) && $_GET['articles'] >= 1 && $_GET['articles'] < $total_pages) $this->right1 = $_GET['articles'] + 1;
-        if (!empty($_GET['articles']) && $_GET['articles'] >= 1 && $_GET['articles'] < $total_pages-1) $this->right2 = $_GET['articles'] + 2;
+        if (!empty($_GET['articles']) && $_GET['articles'] >= 1 && $_GET['articles'] < $total_pages - 1) $this->right2 = $_GET['articles'] + 2;
     }
 
-    function count($model){
-        $temp =$model->count_posts%$model->num_of_article;
-        $this->full_page = $temp*$model->num_of_article;
-        $this->no_full_page = $model->count_posts-$this->full_page;
-        echo $this->no_full_page;
+    function count($model)
+    {
+        $temp = (integer)($model->count_posts / $model->num_of_article);
+        $temp2 = $temp * $model->num_of_article;
+        $this->no_full_page = $model->count_posts - $temp2;
+        $this->full_page = $model->num_of_article;
     }
 }

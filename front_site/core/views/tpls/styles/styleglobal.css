@@ -26,6 +26,11 @@
     font-style: italic;
 }
 
+* {
+    font-family: "Andada SC";
+    color: #614A4A;
+}
+
 html {
     padding: 0;
     margin: 0;
@@ -74,6 +79,10 @@ nav a {
     text-align: center;
     display: inline-block;
     width: 33%;
+    font-size: 20pt;
+    text-decoration: none;
+    color: #614A4A;
+    font-weight: 400;
 }
 
 .f_box {
@@ -124,12 +133,14 @@ nav a {
     text-align: center;
     margin-bottom: 13px;
     font-size: 18pt;
+    font-weight: 700;
 }
 
 .full_text {
     text-indent: 25px;
     margin-left: 20px;
     margin-right: 20px;
+    color: #584747;
 }
 
 .red_more {
@@ -138,6 +149,15 @@ nav a {
     color: #82867F;
     margin-left: 15px;
     margin-top: 8px;
+}
+
+.red_more a {
+    text-decoration: none;
+}
+
+.red_more a:hover {
+    text-decoration: none;
+    color: #C13A3A;
 }
 
 .date {
@@ -168,4 +188,17 @@ footer p {
     color: #E20606;
 }
 
+.date b {
+    color: #67675B;
+}
+
+.select_cat{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 15pt;
+}
+.submit_cat{
+    font-size: 15pt;
+    margin-left: 8px;
+}
 

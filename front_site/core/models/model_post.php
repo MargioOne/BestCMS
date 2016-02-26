@@ -13,6 +13,7 @@ class model_post
     public $num_of_article;
     public $sitename;
     public $copyrate;
+    public $num_of_symvol;
 
     function __construct()
     {
@@ -20,12 +21,20 @@ class model_post
         $this->get_count_articles_config();
         $this->get_name_site();
         $this->get_copyrate();
+        $this->get_count_symvol_config();
     }
 
     function get_article($start, $num)
     {
         $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        $this->result = $db->query("SELECT * FROM article LIMIT $start, $num");
+        $this->result = $db->query("SELECT * FROM article ORDER BY date LIMIT $start, $num");
+        return $this->result;
+    }
+
+    function get_article_by_cat($start, $num, $cat)
+    {
+        $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
+        $this->result = $db->query("SELECT * FROM article WHERE Cattegory = $cat ORDER BY date LIMIT $start, $num");
         return $this->result;
     }
 
@@ -50,10 +59,10 @@ class model_post
     function get_count_symvol_config()
     {
         $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        $result = $db->query('SELECT count_articles_on_page FROM config');
+        $result = $db->query('SELECT count_symvol_on_prepage FROM config');
         $data = mysqli_fetch_assoc($result);
-        $this->num_of_article = $data['count_articles_on_page'];
-        return $this->num_of_article;
+        $this->num_of_symvol = $data['count_symvol_on_prepage'];
+        return $this->num_of_symvol;
     }
 
     function get_name_site()
