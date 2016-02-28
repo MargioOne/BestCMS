@@ -47,6 +47,7 @@ echo '
 ?>
 <div class="pagination">
     <?php
+    $cat = $_GET['category'];
     if (!empty($prev)){echo '<a href="?articles='.$prev.'">&larr;</a>';}
     ?>
     <?php
@@ -63,7 +64,7 @@ echo '
     if (!empty($right2)){echo '<a href="?articles='.$right2.'">'.$right2.'</a>';}
     ?>
     <?php
-    if (!empty($next)){echo '<a href="?articles='.$next.'">&rarr;</a>';}
+    if (!empty($next)){echo '<a href="?articles='.$next.'&category='.$cat.'">&rarr;</a>';}
 
     ?>
 </div>

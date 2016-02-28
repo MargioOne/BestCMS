@@ -27,32 +27,22 @@ class post_controller
 
     function get_article_and_pagination($model)
     {
-
-        if (empty($_GET['category'])) {
-            $num = $model->num_of_article;
-            $count = $model->count_posts;
-            $articles = $_GET['articles'];
-            $total_pages = intval(($count - 1) / $num) + 1;
-            $this->last_page = $total_pages;
-            if (empty($articles) || $articles < 0) $articles = 1;
-            if ($articles > $total_pages) $articles = $total_pages;
-            $start = $articles * $num - $num;
-            $model->get_article($start, $num);
-
-        }else{
-            $num = $model->num_of_article;
-            $count = $model->count_posts;
-            $articles = $_GET['articles'];
-            $total_pages = intval(($count - 1) / $num) + 1;
-            $this->last_page = $total_pages;
-            if (empty($articles) || $articles < 0) $articles = 1;
-            if ($articles > $total_pages) $articles = $total_pages;
-            $start = $articles * $num - $num;
+        $cat = NULL;
+        if (!empty($_GET['category'])) {
             $cat = $_GET['category'];
-            $model->get_article_by_cat($start, $num, $cat);
         }
-
+        $model->get_count_posts($cat);
+        $num = $model->num_of_article;
+        $count = $model->count_posts;
+        $articles = $_GET['articles'];
+        $total_pages = intval(($count - 1) / $num) + 1;
+        $this->last_page = $total_pages;
+        if (empty($articles) || $articles < 0) $articles = 1;
+        if ($articles > $total_pages) $articles = $total_pages;
+        $start = $articles * $num - $num;
+        $model->get_article($start, $num, $cat);
         while ($this->postrow[] = mysqli_fetch_array($model->result)) ;
+
     }
 
     function structure_of_list($view, $model)
@@ -74,6 +64,15 @@ class post_controller
         if (!empty($_GET['articles']) && $_GET['articles'] > 2 && $_GET['articles'] <= $total_pages) $this->left2 = $_GET['articles'] - 2;
         if (!empty($_GET['articles']) && $_GET['articles'] >= 1 && $_GET['articles'] < $total_pages) $this->right1 = $_GET['articles'] + 1;
         if (!empty($_GET['articles']) && $_GET['articles'] >= 1 && $_GET['articles'] < $total_pages - 1) $this->right2 = $_GET['articles'] + 2;
+        /*$cat = NULL;
+        if (!empty($_GET['category'])) {
+            $cat = $_GET['category'];
+        }
+        if (empty($cat)) {
+
+        }else{
+
+        }*/
     }
 
     function count($model)
