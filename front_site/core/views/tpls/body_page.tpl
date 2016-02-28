@@ -29,7 +29,7 @@
 }
 }else{
 for ($i = 0; $i < $no_full; $i++) {
-echo '
+echo $no_full.'
 <div class="article">
     <div class="user">Добавил: <b>'.$postrow[$i]["user"].'</b></div>
     <div class="time">Время добавления: <b>'.$postrow[$i]["time"].'</b></div>
@@ -47,25 +47,25 @@ echo '
 ?>
 <div class="pagination">
     <?php
-    $cat = $_GET['category'];
+    if(empty($cat)){
     if (!empty($prev)){echo '<a href="?articles='.$prev.'">&larr;</a>';}
-    ?>
-    <?php
     if (!empty($left2)){echo '<a href="?articles='.$left2.'">'.$left2.'</a>';}
-    ?>
-    <?php
     if (!empty($left1)){echo '<a href="?articles='.$left1.'">'.$left1.'</a>';}
-    ?>
-    <?php echo '<b>'.$current.'</b>';?>
-    <?php
+    echo '<b>'.$current.'</b>';
     if (!empty($right1)){echo '<a href="?articles='.$right1.'">'.$right1.'</a>';}
-    ?>
-    <?php
     if (!empty($right2)){echo '<a href="?articles='.$right2.'">'.$right2.'</a>';}
-    ?>
-    <?php
+    if (!empty($next)){echo '<a href="?articles='.$next.'">&rarr;</a>';}
+    }else{
+    if (!empty($prev)){echo '<a href="?articles='.$prev.'&category='.$cat.'">&larr;</a>';}
+    if (!empty($left2)){echo '<a href="?articles='.$left2.'&category='.$cat.'">'.$left2.'</a>';}
+    if (!empty($left1)){echo '<a href="?articles='.$left1.'&category='.$cat.'">'.$left1.'</a>';}
+    echo '<b>'.$current.'</b>';
+    if (!empty($right1)){echo '<a href="?articles='.$right1.'&category='.$cat.'">'.$right1.'</a>';}
+    if (!empty($right2)){echo '<a href="?articles='.$right2.'&category='.$cat.'">'.$right2.'</a>';}
     if (!empty($next)){echo '<a href="?articles='.$next.'&category='.$cat.'">&rarr;</a>';}
-
+    }
     ?>
 </div>
 </div>
+
+

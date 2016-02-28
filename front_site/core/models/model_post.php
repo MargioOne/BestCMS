@@ -26,9 +26,9 @@ class model_post
     function get_article($start, $num, $cat)
     {
         $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        if (!empty($cat)){
+        if (!empty($cat)) {
             $this->result = $db->query("SELECT * FROM article WHERE Cattegory = $cat ORDER BY date LIMIT $start, $num");
-        } else{
+        } else {
             $this->result = $db->query("SELECT * FROM article ORDER BY date LIMIT $start, $num");
         }
         return $this->result;
@@ -37,9 +37,9 @@ class model_post
     function get_count_posts($cat)
     {
         $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        if (!empty($cat)){
+        if (!empty($cat)) {
             $result = $db->query("SELECT count(`title`) as total FROM article WHERE `Cattegory` = $cat");
-        }else{
+        } else {
             $result = $db->query('SELECT count(*) as total FROM article');
         }
         $data = mysqli_fetch_assoc($result);
@@ -81,23 +81,5 @@ class model_post
         $data = mysqli_fetch_assoc($result);
         $this->copyrate = $data['copyrate'];
         return $this->copyrate;
-    }
-
-    //////////////////////////////////////////// for category
-    function get_article_by_cat($start, $num, $cat)
-    {
-        $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        $this->result_by_cat = $db->query("SELECT * FROM article WHERE Cattegory = $cat ORDER BY date LIMIT $start, $num");
-        return $this->result_by_cat;
-    }
-
-    function get_count_posts_by_cat($cat)
-    {
-
-        $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);
-        $result = $db->query("SELECT count(`title`) as total FROM article WHERE `Cattegory` = $cat");
-        $data = mysqli_fetch_assoc($result);
-        $this->count_posts_by_cat = $data['total'];
-        return $this->count_posts_by_cat;
     }
 }

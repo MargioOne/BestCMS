@@ -47,11 +47,15 @@ class post_controller
 
     function structure_of_list($view, $model)
     {
+        $cat = NULL;
+        if (!empty($_GET['category'])) {
+            $cat = $_GET['category'];
+        }
         $title = 'POST PAGE - ' . $model->sitename;
         $cssfile = "styleglobal.css";
         $copyrate = $model->copyrate;
         $view->get_header($cssfile, $title);
-        $view->get_body($this->postrow, $this->prev, $this->next, $this->left1, $this->left2, $this->right1, $this->right2, $this->full_page, $this->no_full_page, $this->last_page);
+        $view->get_body($this->postrow, $this->prev, $this->next, $this->left1, $this->left2, $this->right1, $this->right2, $this->full_page, $this->no_full_page, $this->last_page, $cat);
         $view->get_footer($copyrate);
     }
 
@@ -81,5 +85,8 @@ class post_controller
         $temp2 = $temp * $model->num_of_article;
         $this->no_full_page = $model->count_posts - $temp2;
         $this->full_page = $model->num_of_article;
+        if($this->no_full_page == NULL){
+            $this->no_full_page = $this->full_page;
+        }
     }
 }
