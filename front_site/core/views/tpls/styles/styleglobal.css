@@ -141,6 +141,7 @@ nav a {
     margin-left: 20px;
     margin-right: 20px;
     color: #584747;
+    min-height: 180px;
 }
 
 .red_more {
