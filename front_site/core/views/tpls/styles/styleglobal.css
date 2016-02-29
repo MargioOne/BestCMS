@@ -142,6 +142,7 @@ nav a {
     margin-right: 20px;
     color: #584747;
     min-height: 180px;
+    font-size: 13pt;
 }
 
 .red_more {
@@ -182,24 +183,39 @@ footer p {
     text-decoration: none;
     font-size: 13pt;
     color: #000000;
+    margin-left: 4px;
 }
 
 .pagination b {
     font-size: 15pt;
     color: #E20606;
+    margin-left: 4px;
 }
 
 .date b {
     color: #67675B;
 }
 
-.select_cat{
+.select_cat {
     margin-left: 20px;
     margin-top: 20px;
     font-size: 15pt;
 }
-.submit_cat{
+
+.submit_cat {
     font-size: 15pt;
     margin-left: 8px;
+}
+
+.no_article {
+    width: 303px;
+    font-size: 15pt;
+    margin: 15px auto;
+}
+
+a.current_page {
+    font-weight: 700;
+    font-size: 22pt;
+    color: #A26945;
 }
 
