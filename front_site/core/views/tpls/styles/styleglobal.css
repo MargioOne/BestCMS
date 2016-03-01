@@ -225,7 +225,7 @@ a.current_page {
     font-size: 20pt;
     font-weight: 700;
     margin: 15px auto;
-    margin-top: 30px
+    margin-top: 10px
 }
 
 .text_article {
@@ -241,14 +241,14 @@ a.current_page {
 .user_add {
     float: left;
     font-size: 14pt;
-    margin-top: 32px;
+    margin-top: 22px;
     margin-left: 30px;
 }
 
 .time_add {
     float: right;
     font-size: 14pt;
-    margin-top: 32px;
+    margin-top: 22px;
     margin-right: 30px;
 }
 header a{
@@ -256,4 +256,22 @@ header a{
 }
 header a:hover{
     color: #C13A3A;
+}
+
+.back {
+    float: left;
+    font-size: 14pt;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.back a{
+    text-decoration: none;
+}
+.back a:hover{
+    color: #C13A3A;
+}
+
+.title_article {
+    clear: both;
 }
