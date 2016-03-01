@@ -9,6 +9,12 @@
 class model_page
 {
     public $result, $sitename, $copyrate;
+    function __construct()
+    {
+        $this->get_copyrate();
+        $this->get_name_site();
+    }
+
     function get_article($id)
     {
         $db = new mysqli(HOSTBD, USERBD, PASSBD, NAMEBD);

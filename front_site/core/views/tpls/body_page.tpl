@@ -25,7 +25,7 @@ echo '
     <div class="time">Addition time: <b>'.$postrow[$i]["time"].'</b></div>
     <hr class="hr1">
     <div class="title_page">
-        <header>'.$postrow[$i]["title"].'</header>
+        <header><a href="?page=full_page&id='.$postrow[$i]["id"].'">'.$postrow[$i]["title"].'</a></header>
     </div>
     <div class="full_text">'.$postrow[$i]["description"].'</div>
     <hr>
@@ -42,7 +42,7 @@ echo '
     <div class="time">Addition time: <b>'.$postrow[$i]["time"].'</b></div>
     <hr class="hr1">
     <div class="title_page">
-        <header>'.$postrow[$i]["title"].'</header>
+        <header><a href="?page=full_page&id='.$postrow[$i]["id"].'">'.$postrow[$i]["title"].'</a></header>
     </div>
     <div class="full_text">'.$postrow[$i]["description"].'</div>
     <hr>

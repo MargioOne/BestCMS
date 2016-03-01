@@ -149,8 +149,8 @@ nav a {
     float: left;
     font-size: 11pt;
     color: #82867F;
-    margin-left: 15px;
-    margin-top: 8px;
+    margin-left: 20px;
+    margin-top: 3px;
 }
 
 .red_more a {
@@ -166,8 +166,8 @@ nav a {
     float: right;
     font-size: 11pt;
     color: #82867F;
-    margin-right: 15px;
-    margin-top: 8px;
+    margin-right: 20px;
+    margin-top: 3px;
 }
 
 footer p {
@@ -208,7 +208,7 @@ footer p {
 }
 
 .no_article {
-    width: 303px;
+    width: 370px;
     font-size: 15pt;
     margin: 15px auto;
 }
@@ -216,6 +216,44 @@ footer p {
 a.current_page {
     font-weight: 700;
     font-size: 22pt;
-    color: #A26945;
+    color: #BF2F2F;
 }
 
+.title_article header {
+    text-align: center;
+    width: 80%;
+    font-size: 20pt;
+    font-weight: 700;
+    margin: 15px auto;
+    margin-top: 30px
+}
+
+.text_article {
+    width: 90%;
+    margin: 15px auto;
+    min-height: 660px;
+}
+
+.article_page {
+    min-height: 725px;
+}
+
+.user_add {
+    float: left;
+    font-size: 14pt;
+    margin-top: 32px;
+    margin-left: 30px;
+}
+
+.time_add {
+    float: right;
+    font-size: 14pt;
+    margin-top: 32px;
+    margin-right: 30px;
+}
+header a{
+    text-decoration: none;
+}
+header a:hover{
+    color: #C13A3A;
+}
