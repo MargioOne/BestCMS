@@ -27,7 +27,6 @@ class model_page
         $result = $db->query('SELECT name_of_site FROM config');
         $data = mysqli_fetch_assoc($result);
         $this->sitename = $data['name_of_site'];
-        return $this->sitename;
     }
 
     function get_copyrate()
@@ -36,6 +35,5 @@ class model_page
         $result = $db->query('SELECT copyrate FROM config');
         $data = mysqli_fetch_assoc($result);
         $this->copyrate = $data['copyrate'];
-        return $this->copyrate;
     }
 }
